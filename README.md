@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://your-solution-url.com)
-- Live Site URL: [GitHub Pages](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/wesleyjacoby/Intro-Component-with-Signup-Form)
+- Live Site URL: [GitHub Pages](https://wesleyjacoby.github.io/Intro-Component-with-Signup-Form/)
 
 ## My process
 
