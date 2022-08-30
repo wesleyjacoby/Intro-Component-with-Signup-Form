@@ -13,8 +13,20 @@ const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0
 form.addEventListener('submit', e => {
     e.preventDefault();
 
+    const firstNameValue = firstName.value.trim();
+    const lastNameValue = lastName.value.trim();
+    const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
-    checkPassword(passwordValue, 3);
+
+    if (firstNameValue === '') {
+        checkFirstName(firstNameValue, 0);
+    } else if (lastNameValue === '') {
+        checkLastName(lastNameValue, 1);
+    } else if (emailValue === '') {
+        checkEmail(emailValue, 2);
+    } else if (passwordValue === '') {
+        checkPassword(passwordValue, 3);
+    }
 })
 
 input[0].addEventListener('focus', () => {
@@ -22,7 +34,6 @@ input[0].addEventListener('focus', () => {
 })
 input[0].addEventListener('blur', () => {
     const firstNameValue = firstName.value.trim();
-    checkFirstName(firstNameValue, 0);
 })
 
 input[1].addEventListener('focus', () => {
@@ -39,6 +50,14 @@ input[2].addEventListener('focus', () => {
 input[2].addEventListener('blur', () => {
     const emailValue = email.value.trim();
     checkEmail(emailValue, 2);
+})
+
+input[3].addEventListener('focus', () => {
+    resetInput(3);
+})
+input[3].addEventListener('blur', () => {
+    const passwordValue = password.value.trim();
+    checkPassword(passwordValue, 3);
 })
 
 function checkFirstName(firstNameValue, i) {
